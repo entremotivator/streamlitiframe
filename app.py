@@ -43,7 +43,7 @@ def main():
         # Display additional information or settings in the second column
         with col2:
             st.subheader("Embedded App Settings:")
-            st.write(f"App URL: {embedded_app_url}")
+            st.write(f"App URL: [{embedded_app_url}]({embedded_app_url})")
             st.write(f"Iframe Width: {iframe_width}")
             st.write(f"Iframe Height: {iframe_height}")
             st.write(f"Allow Fullscreen: {allow_fullscreen}")
@@ -62,4 +62,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
