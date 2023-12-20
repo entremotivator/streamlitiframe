@@ -43,12 +43,13 @@ def main():
             st.markdown(preview_code, unsafe_allow_html=True)
 
             # Dynamically update iframe using JavaScript
-            st.script_runner(f"""
+            js_code = f"""
                 document.getElementById('preview_iframe_{i}').src = "{app_url}";
                 document.getElementById('preview_iframe_{i}').width = "{iframe_width}";
                 document.getElementById('preview_iframe_{i}').height = "{iframe_height}";
                 document.getElementById('preview_iframe_{i}').allowfullscreen = "{allow_fullscreen}";
-            """)
+            """
+            st.markdown(f'<script>{js_code}</script>', unsafe_allow_html=True)
 
     if st.button("Embed", key="embed_button"):
         # Create a responsive layout using columns
